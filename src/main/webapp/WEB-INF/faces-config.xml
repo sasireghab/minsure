@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faces-config xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+   http://java.sun.com/xml/ns/javaee/web-facesconfig_1_2.xsd"
+	version="1.2">
+
+	<application>
+		<resource-bundle>
+			<base-name>minsure.message</base-name>
+			<var>msg</var>
+		</resource-bundle>
+	</application>
+
+	<managed-bean>
+		<managed-bean-name>customer</managed-bean-name>
+		<managed-bean-class>com.motor.insurance.minsure.bean.Customer</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<navigation-rule>
+		<display-name>Welcome</display-name>
+		<from-view-id>/customer.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>next</from-outcome>
+			<to-view-id>/vehicle.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+
+	<managed-bean>
+		<managed-bean-name>vehicle</managed-bean-name>
+		<managed-bean-class>com.motor.insurance.minsure.bean.Vehicle</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+	<navigation-rule>
+		<display-name>Vehicle</display-name>
+		<from-view-id>/vehicle.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>back</from-outcome>
+			<to-view-id>/customer.jsp</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>next</from-outcome>
+			<to-view-id>/quote.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<managed-bean>
+		<managed-bean-name>quote</managed-bean-name>
+		<managed-bean-class>com.motor.insurance.minsure.bean.Quote</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+		<managed-property>
+			<property-name>customer</property-name>
+			<value>#{customer}</value>
+		</managed-property>
+		<managed-property>
+			<property-name>vehicle</property-name>
+			<value>#{vehicle}</value>
+		</managed-property>
+	</managed-bean>
+
+	<validator>
+		<display-name>Registration Number Validator</display-name>
+		<validator-id>RegNumberValidator</validator-id>
+		<validator-class>com.motor.insurance.minsure.validator.RegNumberValidator</validator-class>
+	</validator>
+
+	<validator>
+		<display-name>Dateofbirth Validator</display-name>
+		<validator-id>DateofbirthValidator</validator-id>
+		<validator-class>com.motor.insurance.minsure.validator.DateofbirthValidator</validator-class>
+	</validator>
+
+
+</faces-config>

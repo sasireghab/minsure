@@ -1,0 +1,21 @@
+/*
+* — Style definition used in the motor insurnace application —
+*/
+.panelBorder {
+	border-width: 2px;
+	border-style: double;
+}
+
+.alignmentLeft {
+	text-align: left;
+}
+
+.alignmentRight {
+	text-align: right;
+}
+
+.headerText {
+	color: #cc150e;
+	font-size: 200%;
+}
+
