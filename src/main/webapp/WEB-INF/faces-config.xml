@@ -30,7 +30,7 @@
 	<managed-bean>
 		<managed-bean-name>vehicle</managed-bean-name>
 		<managed-bean-class>com.motor.insurance.minsure.bean.Vehicle</managed-bean-class>
-		<managed-bean-scope>request</managed-bean-scope>
+		<managed-bean-scope>session</managed-bean-scope>
 	</managed-bean>
 	<navigation-rule>
 		<display-name>Vehicle</display-name>

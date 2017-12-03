@@ -14,10 +14,12 @@
 
 
 <script language="javascript" type="text/javascript">
+	// Closing the current window when the close button is clicked
 	function windowClose() {
-		alert("windowClose called..");
-		window.opener = self;
-		window.close();
+		if (confirm("This will close the application. Do you really want to close the application.")) {
+			window.opener = self;
+			window.close();
+		}
 	}
 </script>
 </head>
