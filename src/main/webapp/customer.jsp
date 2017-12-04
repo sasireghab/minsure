@@ -28,6 +28,12 @@
 							styleClass="headerText" />
 					</h:panelGrid>
 					<hr />
+					<h:panelGrid columns="1">
+						<h:panelGroup>
+							<h:outputText value="All fields are mandatory"
+								style="color:#48322d" />
+						</h:panelGroup>
+					</h:panelGrid>
 
 					<h:panelGrid columns="3">
 						<h:panelGroup>

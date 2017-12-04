@@ -19,18 +19,21 @@
 			styleClass="panelBorder">
 			<%@include file="header.jsp"%>
 
-
-
 			<h:panelGrid columns="1" bgcolor="#FFFFCC" width="100%"
 				styleClass="panelBorder">
 				<h:form>
-
 					<h:panelGrid columns="1">
 						<h:outputLabel value="#{msg.vehicleHeader}"
 							styleClass="headerText" />
 					</h:panelGrid>
 					<hr />
 
+					<h:panelGrid columns="1">
+						<h:panelGroup>
+							<h:outputText value="All fields are mandatory"
+								style="color:#48322d" />
+						</h:panelGroup>
+					</h:panelGrid>
 
 					<h:panelGrid columns="3">
 
